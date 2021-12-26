@@ -24,7 +24,7 @@ Jobs._____.getJobName();
 Jobs._____.getJobDescription();
 ```
 
-### 능력 Event
+### 능력 Event - Cancellable
 ```
 AbilityStartUseEvnet(Jobs job);
 AbilityEndUseEvnet(Jobs job);
