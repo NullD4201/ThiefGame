@@ -24,7 +24,11 @@ Jobs._____.getJobName();
 Jobs._____.getJobDescription();
 ```
 
-
+### 능력 Event
+```
+AbilityStartUseEvnet(Jobs job);
+AbilityEndUseEvnet(Jobs job);
+```
 
 ### 직업설정
 ```
