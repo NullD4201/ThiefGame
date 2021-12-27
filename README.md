@@ -1,7 +1,7 @@
 # **숨은 괴도 찾기 API**
 
 ## 빌드
-[![](https://jitpack.io/v/NullD4201/ThiefGame.svg)](https://jitpack.io/#NullD4201/ThiefGame)
+[![](https://jitpack.io/v/nullD4201/ThiefGame.svg)](https://jitpack.io/#nullD4201/ThiefGame)
 
 ## 용법
 
