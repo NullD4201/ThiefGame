@@ -26,7 +26,7 @@ public enum ChatChannel {
         return channelName;
     }
 
-    public ChatChannel getChannel(String channelName) {
+    public static ChatChannel getChannel(String channelName) {
         ChatChannel cc;
         if (Pattern.matches("^[a-zA-Z]*$", channelName)) cc = ChatChannel.valueOf(channelName);
         else cc = NAME_TO_CHANNEL.get(channelName);
@@ -34,18 +34,18 @@ public enum ChatChannel {
         return cc;
     }
 
-    public List<UUID> getChannelPlayers(String channelName) {
+    public static List<UUID> getChannelPlayers(String channelName) {
         return channelPlayers.get(getChannel(channelName));
     }
 
-    public void addPlayerToChannel(Player player, String channelName) {
+    public static void addPlayerToChannel(Player player, String channelName) {
         List<UUID> current = getChannelPlayers(channelName);
         current.add(player.getUniqueId());
 
         channelPlayers.put(getChannel(channelName), current);
     }
 
-    public void removePlayerFromChannel(Player player, String channelName) {
+    public static void removePlayerFromChannel(Player player, String channelName) {
         List<UUID> current = getChannelPlayers(channelName);
         current.remove(player.getUniqueId());
 
