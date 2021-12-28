@@ -86,6 +86,9 @@ public enum ChatChannel {
     }
 
     public static void register() {
-        for (ChatChannel cc : ChatChannel.values()) NAME_TO_CHANNEL.put(cc.getChannelName(), cc);
+        for (ChatChannel cc : ChatChannel.values()) {
+            NAME_TO_CHANNEL.put(cc.getChannelName(), cc);
+            channelPlayers.put(cc, new ArrayList<>());
+        }
     }
 }
