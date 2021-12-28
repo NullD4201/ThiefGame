@@ -1,5 +1,7 @@
 package jinu.nulld.flow;
 
+import org.bukkit.Bukkit;
+
 public enum GameState {
 
     WAITING("게임 대기"),
@@ -45,6 +47,7 @@ public enum GameState {
      */
     public static boolean setGameState(GameState state){
         GameStateChangeEvent event = new GameStateChangeEvent(NOW_STATE, state);
+        Bukkit.getPluginManager().callEvent(event);
 
         if(!event.isCancelled()){
             NOW_STATE = state;

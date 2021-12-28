@@ -18,7 +18,16 @@ public class GameStateChangeEvent extends Event implements Cancellable {
         this.newState = newState;
     }
 
+    /**
+     * 바뀌기 이전의 State를 구합니다.
+     * @return 바뀌기 이전 GameState
+     */
     public GameState getOldState(){ return this.oldState; }
+
+    /**
+     * 바뀐 뒤의 State를 구합니다.
+     * @return 바뀐 뒤의 GameState
+     */
     public GameState getNewState() { return this.newState; }
 
     @Override
