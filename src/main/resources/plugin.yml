@@ -5,5 +5,4 @@ prefix: §7[ §aTheifJobs §7]
 
 commands:
   thjob:
-    usage: /thgame <get/set> <player> [job]
     description: Get/Set [player]'s Job

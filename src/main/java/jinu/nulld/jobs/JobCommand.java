@@ -17,7 +17,7 @@ public class JobCommand implements Listener, TabExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (label.equalsIgnoreCase("thjob")) {
             if (args.length == 0) help(sender);
-            if (args.length == 1) {
+            else {
                 if (args[0].equalsIgnoreCase("get")) get(sender, args);
                 if (args[0].equalsIgnoreCase("set")) set(sender, args);
             }
