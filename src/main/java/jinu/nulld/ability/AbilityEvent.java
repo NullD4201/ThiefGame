@@ -15,7 +15,7 @@ public abstract class AbilityEvent extends Event implements Cancellable {
 
     @Override
     public boolean isCancelled() {
-        return false;
+        return isCancelled;
     }
 
     @Override
