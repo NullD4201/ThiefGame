@@ -26,8 +26,13 @@ Jobs._____.getJobDescription();
 
 ### 능력 Event - Cancellable
 ```
-AbilityStartUseEvnet(Jobs job);
-AbilityEndUseEvnet(Jobs job);
+AbilityStartUseEvent(Jobs job);
+AbilityEndUseEvent(Jobs job);
+```
+
+### 게임 상태 변경 Event - Cancellable
+```
+GameStateChangeEvent(GameState oldState, GameState newState);
 ```
 
 ### 직업설정
@@ -39,4 +44,14 @@ JobAPI.getJob(Player p);            // returns Jobs
 ### 직업 한글이름 -> 영문이름
 ```
 JobAPI.getJobByName(String);
+```
+
+### 현재 게임 진행 상황 구하기
+```
+GameState.getNowState();
+```
+
+### 게임 진행 상황 다음 플로우로 넘기기
+```
+GameState.nextState(boolean useJudgeAbility);
 ```
