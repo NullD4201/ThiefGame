@@ -59,7 +59,7 @@ public enum GameState {
     /**
      * 게임을 다음 플로우로 진행시킵니다.
      * 순서는 해당 클래스의 STATE_ORDER 와 관리자 매뉴얼을 참고해주세요.
-     * @param useJudgeAbility 판사 능력 사용 여부(재판 개정 여부)
+     * @param useJudgeAbility 판사/검사 능력 사용 여부(재판 개정 여부)
      * @return 변경 성공 여부 (!event.isCancelled())
      */
     public static boolean nextState(boolean useJudgeAbility){
