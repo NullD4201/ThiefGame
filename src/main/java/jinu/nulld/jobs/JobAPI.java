@@ -1,5 +1,6 @@
 package jinu.nulld.jobs;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import static jinu.nulld.jobs.Jobs.*;
@@ -24,6 +25,22 @@ public class JobAPI {
         if (jobMap.get(p) != null) return jobMap.get(p);
         else return Jobs.NONE;
     }
+
+    /**
+     * 해당 직업을 가진 플레이어를 불러옵니다.
+     * @param job 직업
+     * @return 플레이어
+     */
+    public static Player getPlayerByJob(Jobs job){
+
+        for(Player ap : Bukkit.getOnlinePlayers()){
+            if(jobMap.containsKey(ap) && jobMap.get(ap) == job)
+                return ap;
+        }
+
+        return null;
+    }
+
     public static Jobs getJobByName(String jobName) {
         if (jobName != null && JOBNAME_TO_JOBS.containsKey(jobName)) return JOBNAME_TO_JOBS.get(jobName);
         else return NONE;
