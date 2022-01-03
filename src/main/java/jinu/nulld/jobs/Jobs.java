@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public enum Jobs {
     DETECTIVE("형사", "누가 어느 은행에 입장했는지와 공원 대화 내용을 실시간으로 확인 가능하다."),
@@ -18,7 +19,7 @@ public enum Jobs {
     // NONE의 경우 접속 시 부여받습니다.
     NONE("직업 없음", "정해진 직업이 없습니다.");
 
-    public final static Map<Player, Jobs> jobMap = new HashMap<>();
+    public final static Map<UUID, Jobs> jobMap = new HashMap<>();
     public final static Map<String, Jobs> JOBNAME_TO_JOBS = new HashMap<>();
 
     private final String jobName;
@@ -39,7 +40,7 @@ public enum Jobs {
 
     // 플러그인 리로드 시 모두의 직업을 NONE으로 설정합니다.
     public static void setNone(){
-        for (Player player : Bukkit.getOnlinePlayers()) jobMap.put(player, NONE);
+        for (Player player : Bukkit.getOnlinePlayers()) jobMap.put(player.getUniqueId(), NONE);
     }
 
     // API 실행 시 Map에 이름과 직업을 매칭합니다.

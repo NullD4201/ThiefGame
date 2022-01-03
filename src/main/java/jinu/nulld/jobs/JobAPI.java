@@ -13,8 +13,8 @@ public class JobAPI {
      * @param j 직업
      */
     public static void setJob(Player p, Jobs j) {
-        if (jobMap.get(p) != null) jobMap.remove(p);
-        jobMap.put(p, j);
+        if (jobMap.get(p.getUniqueId()) != null) jobMap.remove(p.getUniqueId());
+        jobMap.put(p.getUniqueId(), j);
     }
 
     /**
@@ -22,7 +22,7 @@ public class JobAPI {
      * @param p 플레이어
      */
     public static Jobs getJob(Player p) {
-        if (jobMap.get(p) != null) return jobMap.get(p);
+        if (jobMap.get(p.getUniqueId()) != null) return jobMap.get(p.getUniqueId());
         else return Jobs.NONE;
     }
 
@@ -34,7 +34,7 @@ public class JobAPI {
     public static Player getPlayerByJob(Jobs job){
 
         for(Player ap : Bukkit.getOnlinePlayers()){
-            if(jobMap.containsKey(ap) && jobMap.get(ap) == job)
+            if(jobMap.containsKey(ap.getUniqueId()) && jobMap.get(ap.getUniqueId()) == job)
                 return ap;
         }
 

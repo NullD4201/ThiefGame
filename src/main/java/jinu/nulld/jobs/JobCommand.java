@@ -10,6 +10,7 @@ import org.bukkit.util.StringUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class JobCommand implements Listener, TabExecutor {
@@ -28,7 +29,7 @@ public class JobCommand implements Listener, TabExecutor {
     private void get(CommandSender sender, String[] args) {
         String playerName = args[1];
         try {
-            sender.sendMessage("§f"+playerName+"의 직업 : "+JobAPI.getJob(Bukkit.getPlayer(playerName)).getJobName());
+            sender.sendMessage("§f"+playerName+"의 직업 : "+JobAPI.getJob(Objects.requireNonNull(Bukkit.getPlayer(playerName))).getJobName());
         } catch (Exception e) {
             sender.sendMessage("§cUnknown Player Name : §c"+playerName);
         }
@@ -39,7 +40,7 @@ public class JobCommand implements Listener, TabExecutor {
         if (Pattern.matches("^[a-zA-Z]*$", job)) job = Jobs.valueOf(job).getJobName();
         try {
             sender.sendMessage("§f"+playerName+"의 직업 설정 : "+job);
-            JobAPI.setJob(Bukkit.getPlayer(playerName), JobAPI.getJobByName(job));
+            JobAPI.setJob(Objects.requireNonNull(Bukkit.getPlayer(playerName)), JobAPI.getJobByName(job));
         } catch (Exception e) {
             sender.sendMessage("§cUnknown Player Name : §c"+playerName);
         }
