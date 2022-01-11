@@ -7,6 +7,8 @@ import java.util.*;
 public class IsThief {
     public static Map<UUID, Boolean> findThief = new HashMap<>();
 
+    public static List<String> REVEALED_THIEF = new ArrayList<>();
+
     public static boolean booleanThief(Player player) {
         if (findThief.get(player.getUniqueId()) != null) return findThief.get(player.getUniqueId());
         else return false;
@@ -18,6 +20,10 @@ public class IsThief {
             if(findThief.containsKey(ap) && findThief.get(ap)) players.add(ap);
         }
         return players;
+    }
+
+    public static boolean isRevealed(Player player){
+        return booleanThief(player) && REVEALED_THIEF.contains(player.getName().toLowerCase());
     }
 
     public static void setThief(Player player) {
