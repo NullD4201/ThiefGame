@@ -22,6 +22,8 @@ public enum GameState {
 
     private static GameState NOW_STATE = WAITING;
 
+    public static int ROUND = 0;
+
     private static final GameState[] STATE_ORDER = {
             WAITING,
             START,
