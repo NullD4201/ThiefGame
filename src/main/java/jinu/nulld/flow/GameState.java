@@ -22,8 +22,6 @@ public enum GameState {
 
     private static GameState NOW_STATE = WAITING;
 
-    public static int ROUND = 0;
-
     private static final GameState[] STATE_ORDER = {
             WAITING,
             START,
@@ -56,25 +54,6 @@ public enum GameState {
         }
 
         return !event.isCancelled();
-    }
-
-    /**
-     * 게임을 다음 플로우로 진행시킵니다.
-     * 순서는 해당 클래스의 STATE_ORDER 와 관리자 매뉴얼을 참고해주세요.
-     * @param useJudgeAbility 판사/검사 능력 사용 여부(재판 개정 여부)
-     * @return 변경 성공 여부 (!event.isCancelled())
-     */
-    public static boolean nextState(boolean useJudgeAbility){
-        GameState next = null;
-        for(int i=0;i<STATE_ORDER.length;i++){
-            if(STATE_ORDER[i] == NOW_STATE){
-                // 재판이 열려야할 때 DISCUSS 단계면 JUDGE로, 아니면 바로 SETTING으로
-                next = (i >= STATE_ORDER.length - (useJudgeAbility ? 1 : 2)) ? SETTING : STATE_ORDER[i+1];
-                break;
-            }
-        }
-
-        return setGameState(next);
     }
 
 }
