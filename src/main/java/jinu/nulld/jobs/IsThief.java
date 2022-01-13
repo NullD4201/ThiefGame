@@ -7,10 +7,15 @@ import java.util.*;
 public class IsThief {
     public static Map<UUID, Boolean> findThief = new HashMap<>();
 
-    public static List<String> REVEALED_THIEF = new ArrayList<>();
+    public static List<UUID> REVEALED_THIEF = new ArrayList<>();
 
     public static boolean booleanThief(Player player) {
-        if (findThief.get(player.getUniqueId()) != null) return findThief.get(player.getUniqueId());
+        return booleanThief(player.getUniqueId());
+    }
+
+    public static boolean booleanThief(UUID uuid){
+        if (findThief.get(uuid) != null)
+            return findThief.get(uuid);
         else return false;
     }
 
@@ -23,7 +28,11 @@ public class IsThief {
     }
 
     public static boolean isRevealed(Player player){
-        return booleanThief(player) && REVEALED_THIEF.contains(player.getName().toLowerCase());
+        return booleanThief(player.getUniqueId());
+    }
+
+    public static boolean isRevealed(UUID uuid){
+        return booleanThief(uuid) && REVEALED_THIEF.contains(uuid);
     }
 
     public static void setThief(Player player) {
