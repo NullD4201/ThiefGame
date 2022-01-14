@@ -9,6 +9,7 @@ public enum GameState {
     SETTING("세팅"),
     SEARCH("수색"),
     DISCUSS("토론"),
+    VOTING("투표"),
     JUDGE("재판");
 
     private final String name;
@@ -28,6 +29,7 @@ public enum GameState {
             SETTING,
             SEARCH,
             DISCUSS,
+            VOTING,
             JUDGE
     };
 
