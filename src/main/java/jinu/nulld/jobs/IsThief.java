@@ -28,7 +28,7 @@ public class IsThief {
     }
 
     public static boolean isRevealed(Player player){
-        return booleanThief(player.getUniqueId());
+        return isRevealed(player.getUniqueId());
     }
 
     public static boolean isRevealed(UUID uuid){
