@@ -19,6 +19,10 @@ public class VoteEndEvent extends Event {
         return handlers;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     public List<String> getResult() {
         return result;
     }
