@@ -51,11 +51,6 @@ JobAPI.getJobByName(String);
 GameState.getNowState();
 ```
 
-### 게임 진행 상황 다음 플로우로 넘기기
-```
-GameState.nextState(boolean useJudgeAbility);
-```
-
 ### 투표 종료 후 결과값 산출하기
 ```
 VoteEndEvent.getResult();
