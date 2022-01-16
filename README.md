@@ -10,7 +10,7 @@
 Jobs.DETECTIVE          // 형사
 Jobs.JUDGE              // 판사
 Jobs.COUNSEL            // 검사
-Jobs.BEAUTY             // 미녀
+Jobs.HACKER             // 해커
 Jobs.GANG               // 깡패
 Jobs.AGENT              // 보안요원
 Jobs.BANKPRESIDENT      // 은행장
@@ -54,4 +54,16 @@ GameState.getNowState();
 ### 게임 진행 상황 다음 플로우로 넘기기
 ```
 GameState.nextState(boolean useJudgeAbility);
+```
+
+### 투표 종료 후 결과값 산출하기
+```
+VoteEndEvent.getResult();
+VoteEndEvent.setResult(List<String> resultList);
+```
+
+### StringList to PlayerList / PlayerList to StringList
+```
+List_StringPlayer.string_to_player(List<String> list);
+List_StringPlayer.player_to_string(List<Player> playerList);
 ```
