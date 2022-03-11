@@ -10,7 +10,8 @@ public enum GameState {
     SEARCH("수색"),
     DISCUSS("토론"),
     VOTING("투표"),
-    JUDGE("재판");
+    JUDGE("재판"),
+    NIGHT("밤");
 
     private final String name;
 
@@ -30,7 +31,8 @@ public enum GameState {
             SEARCH,
             DISCUSS,
             VOTING,
-            JUDGE
+            JUDGE,
+            NIGHT
     };
 
     /**
