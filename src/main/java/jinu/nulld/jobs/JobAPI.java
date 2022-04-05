@@ -16,11 +16,17 @@ public class JobAPI {
      * @param j 직업
      */
     public static void setJob(Player p, Jobs j) {
-        jobMap.put(p.getUniqueId(), j);
+        setJob(p.getUniqueId(), j);
+
     }
 
     public static void setJob(UUID uuid, Jobs j){
         jobMap.put(uuid, j);
+
+        Player p = Bukkit.getPlayer(uuid);
+        if(p != null){
+            j.helmet(p);
+        }
     }
 
 
@@ -29,7 +35,7 @@ public class JobAPI {
      * @param p 플레이어
      */
     public static Jobs getJob(Player p) {
-        return jobMap.getOrDefault(p.getUniqueId(), NONE);
+        return getJob(p.getUniqueId());
     }
 
     public static Jobs getJob(UUID uuid){
