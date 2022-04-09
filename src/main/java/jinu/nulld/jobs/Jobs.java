@@ -27,6 +27,7 @@ public enum Jobs {
     public final static Map<String, Jobs> JOBNAME_TO_JOBS = new HashMap<>();
 
     private boolean abilityUsed;
+    private boolean isEliminated;
 
     private final String jobName;
     private final String jobDescription;
@@ -37,10 +38,15 @@ public enum Jobs {
         this.jobDescription = jobDescription;
         this.helmetCustomData = helmetCustomData;
         this.abilityUsed = false;
+        this.isEliminated = false;
     }
 
     public boolean isAbilityUsed(){
         return this.abilityUsed;
+    }
+
+    public boolean isEliminated(){
+        return this.isEliminated;
     }
 
     public String getJobName() {
@@ -54,6 +60,10 @@ public enum Jobs {
 
     public void setAbilityUsed(boolean used){
         this.abilityUsed = used;
+    }
+
+    public void setEliminated(boolean eliminated){
+        this.isEliminated = eliminated;
     }
 
     public void helmet(Player p){
